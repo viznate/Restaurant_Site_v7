@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Track Order</title>
+    <style>
+        /* Add your CSS styles for the tracking bar here */
+        .tracking-bar {
+            background-color: #f1f1f1;
+            height: 30px;
+            position: relative;
+        }
+
+        .progress-bar {
+            background-color: #4caf50;
+            height: 100%;
+            width: 50%;  /* Adjust this width based on your order progress */
+            position: absolute;
+        }
+
+        .status-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #000;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>This is the Track Order page</h1>
+
+    <!-- Tracking Bar -->
+    <div class="tracking-bar">
+        <div class="progress-bar"></div>
+        <div class="status-text">{{ order_status }}</div>
+    </div>
+
+    <!-- Other order information -->
+    <p>Estimated Delivery Date: {{ estimated_delivery_date }}</p>
+</body>
+</html>

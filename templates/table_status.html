@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" type="text/css" href="static/css/styles.css">
+    <title>Table status</title>
+</head>
+<body>
+    <div class="menu-link">
+        <div class="menu-link">
+            <a href="/">Home</a>
+            <br>
+            <a href="/manager">Go Back</a>
+        </div>
+    </div>
+{%for table in tables%}
+<h1>Table {{table}} - {{ "Paid" if table.is_paid else "Unpaid" }}</h1>
+{%endfor%}

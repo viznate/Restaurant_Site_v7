@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="static/css/styles.css">
+    <title>Place Order</title>
+</head>
+
+
+<body class = "menu-page">
+    <div class="menu-link">
+        <a href="/">Home</a>
+    </div>
+    
+    <h1>Place Order</h1>
+
+    <form method="POST">
+    <h2>Choose Your Table: </h2> 
+    <select name = "tables">
+        <option value = "1">Table 1</option>
+        <option value = "2">Table 2</option>
+        <option value = "3">Table 3</option>
+    </select>
+    <button type = "submit">Confirm</button>
+    </form>
+    <br>
+    {% if selected_table%}
+        <p>Thanks! Your selection is Table {{selected_table}}. You may begin placing your order now:</p>
+    {% endif %}
+
+    <div class = "container">
+
+        <div class = "order_box">
+            <form method="POST">
+                <h2>Menu:</h2>
+                    </br>   
+
+                    <div>
+                        {% for dish in menu %}
+                            <label for="{{ dish.name }}">{{ dish.name }} - ${{ dish.price }}</label>
+                            <input type="number" class="order_input" id="input_{{ dish.name }}" name="{{ dish.name }}" min="0" value="0">
+                            <br>
+                        {% endfor %}
+                    </div>
+
+                <br><br>
+                <button type = "submit"> Place order </button>
+            </form>
+        </div>
+
+
+
+        <div class = "order_box">
+           
+            <h2>Your orders:</h2>
+
+            {%if selected_dishes %}
+                </br>
+                {% for dish,quantity in selected_dishes.items()%}
+                    {% if quantity|int !=0 %} 
+                        <li>{{ dish.name }}: {{ quantity }}</li>
+                    {%endif%}
+                {% endfor %}  
+                <p> Your order has been placed!</p>
+            {% endif %}              
+
+           
+            <p> Your total bill amount is: ${{ total_bill }} </p>
+
+         
+
+        </div>
+
+    </div>
+</body>
+</html>

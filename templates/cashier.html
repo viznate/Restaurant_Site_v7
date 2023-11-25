@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="static/css/styles.css">
+    <title>Cashier</title>
+</head>
+
+<body>
+    <div class="menu-link">
+        <a href="/">Home</a>
+    </div>
+
+    <div class = "container">
+        <!-- Table 1 -->
+        <div class ="tablebox">
+            Table 1:
+            {% if table1_is_paid == "paid" %}
+                <p>Paid</p>
+            {% endif %}
+            {% if table1_is_paid == "unpaid" %}
+                <p>Unpaid</p>
+            {% endif %}
+           <br>
+
+            <form action="/cashier" method="post">
+                {%for dish in table1_order.dishes%}
+                    <li> {{dish.name}}: {{dish.quantity}} </li>
+                {%endfor%}
+            </form>
+            <p>Bill Amount: {{table1_bill}}</p>
+            <form action="/cashier" method="post">
+                
+                <button type = "submit" name = 'pay_table1'>Make Payment</button>
+            </form>
+            <br><br>
+            
+        </div>
+
+        <!-- Table 2 -->
+        <div class ="tablebox">
+            Table 2:
+            {% if table2_is_paid == "paid" %}
+                <p>Paid</p>
+            {% endif %}
+            {% if table2_is_paid == "unpaid" %}
+                <p>Unpaid</p>
+            {% endif %}
+           
+            <br>
+
+            <form action="/cashier" method="post">
+                {%for dish in table2_order.dishes%}
+                    <li> {{dish.name}}: {{dish.quantity}} </li>
+                {%endfor%}
+            </form>
+            <p>Bill Amount: {{table2_bill}}</p>
+            <form action="/cashier" method="post">
+                
+                <button type = "submit" name = 'pay_table2'>Make Payment</button>
+            </form>
+            <br><br>
+            
+        </div>
+
+
+        <!-- Table 3 -->
+        <div class ="tablebox">
+            Table 3:
+            {% if table3_is_paid == "paid" %}
+                <p>Paid</p>
+            {% endif %}
+            {% if table3_is_paid == "unpaid" %}
+                <p>Unpaid</p>
+            {% endif %}
+           
+            <br>
+
+            <form action="/cashier" method="post">
+                {%for dish in table3_order.dishes%}
+                    <li> {{dish.name}}: {{dish.quantity}} </li>
+                {%endfor%}
+            </form>
+            <p>Bill Amount: {{table3_bill}}</p>
+            <form action="/cashier" method="post">
+                
+                <button type = "submit" name = 'pay_table3'>Make Payment</button>
+            </form>
+            <br><br>
+            
+        </div>
+
+
+    </div>
+</body>

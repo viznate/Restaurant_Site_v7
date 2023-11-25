@@ -1,0 +1,227 @@
+	/*
+	This controls the body of the page
+	You can use this to set the background color, margins, etc. as shown below
+	*/
+	body {
+        background-color: #444444;
+        margin-top: 100px;
+        margin-left: 10%;
+        margin-right: 10%;
+        
+      }
+
+      
+      /* This is used to make profile picture cropped as a circle */
+      img {
+       
+        width: 300px; 
+        height: 200px;
+      }
+      
+      /* Formatting for different header levels, if you need them! */
+      h1 {
+        margin-top: 20px;
+        margin-bottom: 30px;
+        font-family: Averta, sans-serif;
+        color: #fff;
+        font-size: 56px;
+        line-height: 44px;
+        font-weight: 700;
+      }
+      
+      h2 {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        color: #fff;
+        font-family: Averta, sans-serif;
+        font-size: 22px;
+        line-height: 10px;
+        font-style: normal;
+        font-weight: 700;
+
+      }
+
+      
+      /* Formatting for paragraph text */
+      p {
+        margin-bottom: 20px;
+        font-family: Averta, sans-serif;
+        color: #fff;
+        font-size: 22px;
+        line-height: 10px;
+      }
+      
+      /* "a" refers to links, everything below controls the color and behavior of link objects */
+      a {
+        -webkit-transition: border-color 200ms ease, color 200ms ease;
+        transition: border-color 200ms ease, color 200ms ease;
+        color: #fff;
+        text-decoration: none;
+      }
+      
+      a:hover {
+        border-bottom-color: #1d2330;
+        color: #1d2330;
+      }
+      
+      a:focus {
+        border-bottom-color: #1d2330;
+        color: #1d2330;
+      }
+
+      li{
+        color: white;
+        font-family: Averta, sans-serif;
+        font-size: 20px;
+      }
+
+
+
+      /* Anything marked as class="content" will have options below attached */
+      .content {
+        margin-top: 60px;
+      }
+      
+      /* below is special formatting for a custom object, here a social-icon class */
+      .social-icon {
+        margin-top: 60px;
+        padding-right: 25px;
+        float: right;
+        border-bottom: 0px none #000;
+      }
+      
+      /* form settings */
+      form {
+        font-family: Averta, sans-serif;
+        font-size: 22px; 
+        color: #fff;
+      }
+      
+      button {
+        font-family: Averta, sans-serif;
+        font-size: 20px; 
+        color: rgb(5, 5, 5);
+      }
+      
+      /* menu link settings */
+      .menu-link {
+        font-family: Averta, sans-serif;
+        font-size:30px;
+        margin-top: 0px;
+        padding-right: 0px;
+        padding-left: 10px;
+        border-bottom: 2px solid white;
+        text-align: left; 
+        
+      }
+      
+      .login{
+        font-family: Averta, sans-serif;
+        font-size: 20px;
+        display: inline-block;
+        color: #fff;
+      }
+
+      .center-container {
+        text-align: center;
+    }
+      .login-container {
+        display: flex;
+        display: inline-block; 
+        align-items: center;
+        width: 300px;
+        padding: 30px;
+        background-color: #ffffff;
+        border-radius: 8px;
+        margin-top:20px; 
+      }
+      .login-form {
+        width: 100%; 
+      }
+      .login-form input[type="text"],
+      .login-form input[type="password"] {
+        width: 92%;
+        padding: 10px;
+        margin-bottom: 20px;
+        border: 1px sold #878787;
+        border-radius: i4px;
+      }     
+      .login-form button {
+        width: 100%;
+        padding: 10px;
+        background-color: rgb(221, 17, 17);
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      select {
+        font-size: 20px;
+    }
+     
+
+      .container {
+        display: flex; /* This will lay out the .box children in a row */
+        justify-content: space-between; 
+        margin-top: 10px;
+        height: 300px
+      }
+
+      .tablebox{
+        width: 30%; /* Each box will take up roughly 30% of the container width */
+        margin-bottom: 10px;
+        height: 100%;
+        border: 2px solid white; /* This creates a border around each box */
+        padding: 10px; /* This adds some space inside the boxes */
+        color: white;
+        font-family: Averta, sans-serif;
+        font-size: 20px;
+}
+
+      .order_box{
+        width: 45%;
+        height: 80%;
+        margin-bottom: 10px;
+        border: 2px solid white;
+        padding: 10px; 
+        color: white;
+        font-family: Averta, sans-serif;
+        font-size: 20px;
+        word-wrap: break-word;
+
+      }
+
+      .order_input{
+        width: 100px;
+        height: 20px;
+        font-size: 20px;
+      }
+
+
+      .cartbox{
+        width: 45%;
+        height: 100%;
+        margin-bottom: 10px;
+        border: 2px solid white;
+        padding: 10px; 
+        color: white;
+        font-family: Averta, sans-serif;
+        font-size: 20px;
+      }
+
+      .index-page{
+        background-image: url('/static/images/burger.jpg'), url('/static/images/wings.jpg'),url('/static/images/brownie.jpg');
+        background-repeat: no-repeat, no-repeat, no-repeat;
+        background-attachment: fixed, fixed, fixed;
+        background-size: 30% 50%,20% 50%, 20% 50%;
+        background-position: 43% 100%, 75% 100%, 100% 100%;
+      }
+
+      .menu-page{
+        background-image: url('/static/images/wings.jpg'),url('/static/images/burger.jpg'), url('/static/images/taco.jpg'), url('/static/images/brownie.jpg'), url('/static/images/chickenSalad.jpg');
+        background-repeat: no-repeat, no-repeat, no-repeat, no-repeat,no-repeat;
+        background-attachment: fixed, fixed, fixed, fixed, fixed;
+        background-size: 10% 22%,12% 22%, 10% 22%, 10% 22%, 10% 22%;
+        background-position: 53% 0%, 64% 0%, 75% 0%, 86% 0%, 97% 0%;
+      }

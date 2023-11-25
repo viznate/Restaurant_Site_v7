@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" type="text/css" href="static/css/styles.css">
+    <title>Orderlist</title>
+</head>
+<body>
+    <div class="menu-link">
+        <a href="/">Home</a>
+        <br>
+        <a href="/manager">Go Back</a>
+    </div>
+<h1>Total Income ($): {{total_income}}</h1>  
+<h1>Order List: </h1>
+
+{%for order in orders%}
+<h2>Order ID: {{order.id}}, Table {{order.tableNum}}</h2>
+<ul>
+    {%for dish in order.dishes%}
+        <li>{{dish.name}}: {{dish.quantity}}</li>
+    {%endfor%}
+</ul>
+{%endfor%}

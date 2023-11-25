@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="static/css/styles.css">
+    <title>My Server</title>
+</head>
+
+<body>
+    <div class="menu-link">
+        <a href="/">Home</a>
+    </div>
+
+    <div class = "container">
+        <!-- Table 1 -->
+        <div class ="tablebox">
+            Table 1
+            
+            <form action="/server" method="post">
+                {%for dish in table1_order.dishes%}
+                    <li>
+                        <input type = "checkbox" name = "served_{{dish.id}}" id = "served_{{ dish.id }}" value="served"></input>
+                        <label for = "served_{{dish.id}}"> {{dish.name}}: {{dish.quantity}}</label>
+                    </li>
+                {%endfor%}
+            </form>
+            <br><br>
+
+            {% if table1_status %}
+                <p>Table 1 is {{table1_status}}</p>
+            {% endif %}
+           
+            <form action="/server" method="post">
+                <select name = "table1_status">
+                    <option value = "available">Available</option>
+                    <option value = "occupied">Occupied</option>
+                </select>
+                <button type = "submit">Update table status</button>
+            </form>
+        </div>
+
+        <!-- Table 2 -->
+        <div class ="tablebox">
+            Table 2
+            
+            <form action="/server" method="post">
+                {%for dish in table2_order.dishes%}
+                    <li>
+                        <input type = "checkbox" name = "served_{{dish.id}}" id = "served_{{ dish.id }}" value="served"></input>
+                        <label for = "served_{{dish.id}}"> {{dish.name}}: {{dish.quantity}}</label>
+                    </li>
+                {%endfor%}
+            </form>
+            
+            <br><br>
+            
+            {% if table2_status %}
+                <p>Table 2 is {{table2_status}}</p>
+            {% endif %}
+            <form action="/server" method="post">
+                <select name = "table2_status">
+                    <option value = "available">Available</option>
+                    <option value = "occupied">Occupied</option>
+                </select>
+                <button type = "submit">Update table status</button>
+            </form>
+          
+
+        </div>
+
+        <!-- Table 3 -->
+        <div class ="tablebox">
+            Table 3
+           
+            <form action="/server" method="post">
+                {%for dish in table3_order.dishes%}
+                    <li>
+                        <input type = "checkbox" name = "served_{{dish.id}}" id = "served_{{ dish.id }}" value="served"></input>
+                        <label for = "served_{{dish.id}}"> {{dish.name}}: {{dish.quantity}}</label>
+                    </li>
+                {%endfor%}
+            </form>
+            
+            <br><br>
+             
+            {% if table3_status %}
+                <p>Table 3 is {{table3_status}}</p>
+            {% endif %}
+
+            <form action="/server" method="post">
+                <select name = "table3_status">
+                    <option value = "available">Available</option>
+                    <option value = "occupied">Occupied</option>
+                </select>
+                <button type = "submit">Update table status</button>
+            </form>
+        </div>
+    </div>
+</body>
