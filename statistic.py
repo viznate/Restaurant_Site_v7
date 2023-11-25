@@ -13,11 +13,11 @@ plt.ylabel('Quantity Sold')
 plt.title('Total Selling Quantity for Each Dish')
 plt.show()
 
-grouped_data = df.groupby('Dish Name')['Price($)'].sum()
+grouped_data = df.groupby('Dish Name')['Selling($)'].sum()
 
 grouped_data.plot(kind = 'bar')
 plt.xlabel('Dish Name')
 plt.xticks(rotation=45) 
 plt.ylabel('Total Selling ($)')
-plt.title('Total Selling ($) for Each Dish')
+plt.title('Total Selling($) for Each Dish')
 plt.show()

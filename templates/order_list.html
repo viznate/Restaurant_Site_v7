@@ -13,7 +13,7 @@
 <h1>Order List: </h1>
 
 {%for order in orders%}
-<h2>Order ID: {{order.id}}, Table {{order.tableNum}}</h2>
+<h2>Order ID: {{order.id}}, Table {{order.tableNum}}, ${{order.bill_amount}}</h2>
 <ul>
     {%for dish in order.dishes%}
         <li>{{dish.name}}: {{dish.quantity}}</li>

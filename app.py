@@ -105,7 +105,10 @@ def place_order():
                 order = DiningOrders(tableNum=selected_table_num)
                 db.session.add(order) 
                 db.session.commit()   
-
+                process_order = True  # Set to True only if table processing succeeds
+       
+       
+   
         new_order = DiningOrders.query.order_by(DiningOrders.id.desc()).first() # query the new order
         for dish in menu: # Here 'menu' is a list of Dish instances, imported from data.py
             if dish.name in request.form:
@@ -124,9 +127,10 @@ def place_order():
                     csv_file_path = 'orders.csv'
                     with open(csv_file_path, mode='w', newline='', encoding='utf-8') as file:
                         writer = csv.writer(file)
-                        writer.writerow(['Order ID','Dish Name','Quantity', 'Price($)'])
+                        writer.writerow(['Order ID','Dish Name','Quantity', 'Selling($)'])
                         for dish in dishes:
                             writer.writerow([dish.order_id, dish.name, dish.quantity, dish.price*dish.quantity])
+       
 
     return render_template('menu.html', menu=menu, selected_table=selected_table, selected_dishes=selected_dishes, total_bill = total_bill_amount)
 
@@ -287,6 +291,7 @@ def display_orders():
     total_income =0
     for order in orders:
         total_income += order.bill_amount
+        total_income = round(total_income, 2)
 
     
     return render_template('order_list.html', orders = orders, dishes = dishes, total_income = total_income)
